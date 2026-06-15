@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 박주원 포트폴리오
 
-## Getting Started
+React와 Vite로 만든 정적 포트폴리오 사이트입니다. Notion 포트폴리오 내용을 웹 포트폴리오로 옮겨 배포하기 쉽게 구성했습니다.
 
-First, run the development server:
+## 구조
+
+- `frontend/`: Vite 기반 React 앱
+- `frontend/src/data.ts`: 포트폴리오 데이터
+- `frontend/src/main.tsx`: React 화면 구성
+- `frontend/src/styles.css`: 화면 스타일
+
+## 실행
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm --prefix frontend install
+npm run dev:frontend
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+접속 주소:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- React 앱: http://localhost:5173
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 빌드
 
-## Learn More
+```bash
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+빌드 결과물은 `frontend/dist`에 생성됩니다.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 배포
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Vercel 기준 설정:
 
-## Deploy on Vercel
+- Framework Preset: `Vite`
+- Root Directory: `frontend`
+- Build Command: `npm run build`
+- Output Directory: `dist`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Netlify 기준 설정:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Base directory: `frontend`
+- Build command: `npm run build`
+- Publish directory: `frontend/dist`
