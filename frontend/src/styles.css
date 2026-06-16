@@ -230,8 +230,8 @@ a {
 .profile-panel h1 {
   margin: 18px 0 0;
   color: #101827;
-  font-size: clamp(34px, 4.8vw, 48px);
-  line-height: 1.08;
+  font-size: clamp(24px, 3.8vw, 30px);
+  line-height: 1.12;
 }
 
 .profile-panel h1 span {
@@ -247,6 +247,11 @@ a {
 
 .profile-panel .lead {
   margin-top: 22px;
+  font-size: clamp(12px, 1.7vw, 14px);
+}
+
+.profile-panel .support {
+  font-size: 12px;
 }
 
 .profile-links {
@@ -264,8 +269,12 @@ a {
   background: #f5f7fb;
   padding: 11px 13px;
   color: #47566c;
-  font-size: 14px;
+  font-size: 11px;
   font-weight: 700;
+}
+
+.profile-panel .button {
+  font-size: 11px;
 }
 
 .profile-links a:hover {
@@ -726,7 +735,7 @@ a {
   }
 
   .profile-panel h1 {
-    font-size: 38px;
+    font-size: 30px;
   }
 
   .quick-profile-grid {
