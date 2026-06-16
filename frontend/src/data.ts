@@ -32,6 +32,7 @@ export type PortfolioData = {
     problem: string;
     github?: string;
     deploy?: string;
+    screenshots?: Array<{ src: string; alt: string }>;
   }>;
   skills: {
     main: string[];
@@ -119,7 +120,7 @@ export const portfolioData: PortfolioData = {
       features: [
         "인기 여행지 TOP 6 및 명소 상세 이동",
         "부산 축제 정보 목록과 월별 축제 카드",
-        "8개 코스 중 3개를 랜덤 추천하는 여행 코스 화면",
+        "8개 코스 중 3개를 '랜덤' 추천하는 여행 코스 화면",
         "Leaflet 기반 추천 경로 지도와 코스별 마커 표시",
         "여행자 게시판과 최신 게시글 노출",
       ],
@@ -132,7 +133,15 @@ export const portfolioData: PortfolioData = {
       ],
       problem:
         "관광 정보가 명소, 축제, 코스, 게시글로 나뉘어 있어 사용자가 첫 화면에서 원하는 목적지를 찾기 어려울 수 있었습니다. 메인에서는 핵심 섹션을 우선순위대로 배치하고, 추천 코스 화면에서는 목록과 지도를 함께 제공해 여행 동선을 바로 이해할 수 있도록 구성했습니다.",
-      deploy: "http://localhost:8081",
+      github: "https://github.com/Zwonnyy/busan-visit",
+      screenshots: [
+        { src: "/projects/busan-bisit-home-1.png", alt: "Bisit Busan 홈 화면 첫 번째" },
+        { src: "/projects/busan-bisit-home-2.png", alt: "Bisit Busan 홈 화면 두 번째" },
+        { src: "/projects/busan-bisit-home-3.png", alt: "Bisit Busan 홈 화면 세 번째" },
+        { src: "/projects/busan-bisit-attractions-festivals.png", alt: "Bisit Busan 명소 축제 화면" },
+        { src: "/projects/busan-bisit-course-recommendation.png", alt: "Bisit Busan 코스 추천 화면" },
+        { src: "/projects/busan-bisit-board.png", alt: "Bisit Busan 게시판 화면" },
+      ],
     },
     {
       title: "FootMap",
@@ -159,12 +168,20 @@ export const portfolioData: PortfolioData = {
       problem:
         "풋살 매칭 서비스는 팀, 선수, 게임, 커뮤니티 정보가 분산되기 쉬워 사용자가 어디서 시작해야 할지 모호할 수 있었습니다. 메인에서 선수와 팀 랭킹을 먼저 보여주고, 팀 검색 화면에서는 가입에 필요한 핵심 정보만 표로 정리해 탐색과 액션을 빠르게 이어가도록 했습니다.",
       github: "https://github.com/Zwonnyy/footmap",
-      deploy: "http://localhost:8080",
+      screenshots: [
+        { src: "/projects/footmap-home.png", alt: "FootMap 홈 화면" },
+        { src: "/projects/footmap-team-search.png", alt: "FootMap 팀 검색 화면" },
+        { src: "/projects/footmap-game-matching.png", alt: "FootMap 게임 매칭 화면" },
+        { src: "/projects/footmap-board.png", alt: "FootMap 게시판 화면" },
+        { src: "/projects/footmap-about.png", alt: "FootMap 사이트 소개 화면" },
+        { src: "/projects/footmap-stadiums.png", alt: "FootMap 풋살장 정보 화면" },
+        { src: "/projects/footmap-stadium-detail.png", alt: "FootMap 풋살장 상세정보 화면" },
+      ],
     },
     {
       title: "MediGuide AI",
-      type: "AI Healthcare Project",
-      period: "2025",
+      type: "Personal Project",
+      period: "2026.06",
       role: "Full-stack / Backend Developer",
       description:
         "의사와 환자를 위한 AI 기반 건강관리 플랫폼입니다. 진료기록과 처방전을 기반으로 AI 복약 가이드, 건강 인사이트, 진료 전 문진 요약, 의사용 환자 위험도 큐를 제공하도록 설계했습니다.",
@@ -186,11 +203,19 @@ export const portfolioData: PortfolioData = {
       problem:
         "진료 후 환자가 복약법과 생활관리 지침을 꾸준히 실천하지 못하고, 의사는 환자 상태 변화를 여러 화면에서 확인해야 하는 문제가 있었습니다. 진료기록, 복약, 바이탈, 건강일지, 문진 데이터를 하나의 흐름으로 연결하고 AI 분석 결과를 환자 가이드와 의사용 위험도 큐로 나눠 제공하도록 구성했습니다.",
       github: "https://github.com/Zwonnyy/HealthCare_1.git",
+      screenshots: [
+        { src: "/projects/mediguide-dashboard.png", alt: "MediGuide AI 대시보드" },
+        { src: "/projects/mediguide-medical-record.png", alt: "MediGuide AI 진료 기록 화면" },
+        { src: "/projects/mediguide-health-report-menu.png", alt: "MediGuide AI 건강 리포트 메뉴" },
+        { src: "/projects/mediguide-health-report.png", alt: "MediGuide AI 건강 리포트" },
+        { src: "/projects/mediguide-messages.png", alt: "MediGuide AI 메시지 화면" },
+        { src: "/projects/mediguide-reservation.png", alt: "MediGuide AI 예약 화면" },
+      ],
     },
     {
       title: "LifeCare Challenge",
-      type: "Healthcare Routine Project",
-      period: "2025",
+      type: "Personal Project",
+      period: "2026.05",
       role: "Full-stack / Backend Developer",
       description:
         "만성질환 관리가 필요한 사용자가 혈압, 혈당, 체중, 식사, 걷기, 복약 루틴을 챌린지로 관리하는 웹 서비스입니다. 개인화 추천, 루틴 체크, 보호자 공유를 통해 일상 관리가 지속되도록 구성했습니다.",
@@ -212,6 +237,18 @@ export const portfolioData: PortfolioData = {
       problem:
         "만성질환 관리는 한 번의 진료보다 매일 반복되는 생활습관 관리가 중요하지만, 사용자가 기록과 실천을 지속하기 어렵다는 문제가 있었습니다. 질환별 챌린지와 오늘의 루틴, 리마인더, 목표 관리를 연결해 사용자가 다음 행동을 바로 선택할 수 있도록 설계했습니다.",
       github: "https://github.com/Zwonnyy/HealthCare_2.git",
+      screenshots: [
+        { src: "/projects/lifecare-home.png", alt: "LifeCare Challenge 홈 화면" },
+        { src: "/projects/lifecare-dashboard.png", alt: "LifeCare Challenge 대시보드" },
+        { src: "/projects/lifecare-challenge-menu.png", alt: "LifeCare Challenge 챌린지 메뉴" },
+        { src: "/projects/lifecare-reservation.png", alt: "LifeCare Challenge 예약 요청 화면" },
+        { src: "/projects/lifecare-medical-record.png", alt: "LifeCare Challenge 진료 기록 화면" },
+        { src: "/projects/lifecare-notifications.png", alt: "LifeCare Challenge 알림 화면" },
+        { src: "/projects/lifecare-mypage-1.png", alt: "LifeCare Challenge 마이페이지 첫 번째 화면" },
+        { src: "/projects/lifecare-mypage-2.png", alt: "LifeCare Challenge 마이페이지 두 번째 화면" },
+        { src: "/projects/lifecare-messages.png", alt: "LifeCare Challenge 메시지 목록 화면" },
+        { src: "/projects/lifecare-message-compose.png", alt: "LifeCare Challenge 메시지 작성 화면" },
+      ],
     },
   ],
   skills: {
@@ -248,7 +285,7 @@ export const portfolioData: PortfolioData = {
   education: [
     {
       name: "Oz Coding School",
-      course: "넥스트러러스 초격차 교육 - 백엔드 과정",
+      course: "넥스트러너스 초격차 캠프 - 백엔드 코스",
       period: "2025.05 ~ 2025.11",
       details: [
         "K-Digital Training 과정 수료",
@@ -259,13 +296,13 @@ export const portfolioData: PortfolioData = {
     },
     {
       name: "국비지원교육",
-      course: "머신러닝 SW 개발자 과정",
+      course: "Java/Python을 활용한 머신러닝 SW 개발자 과정",
       period: "2022.07 ~ 2023.02",
       details: ["Python 프로그래밍 학습", "데이터 분석 및 시각화", "머신러닝 기초 학습", "팀 프로젝트 수행"],
     },
     {
       name: "경성대학교",
-      course: "생물학",
+      course: "생물학 전공",
       period: "2013.03 ~ 2019.02",
       details: ["학사 과정 졸업"],
     },

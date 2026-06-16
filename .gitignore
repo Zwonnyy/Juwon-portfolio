@@ -29,6 +29,10 @@ __pycache__/
 # misc
 .DS_Store
 .idea/
+/frontend/public/LifeCare_*.png
+/frontend/public/MediGuide_*.png
+/frontend/public/footmap_*.png
+/frontend/public/busan_bisit_*.png
 *.pem
 
 # debug

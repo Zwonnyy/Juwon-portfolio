@@ -3,6 +3,8 @@ import ReactDOM from "react-dom/client";
 import {
   ArrowUpRight,
   BriefcaseBusiness,
+  ChevronLeft,
+  ChevronRight,
   CheckCircle2,
   Code2,
   Database,
@@ -14,6 +16,7 @@ import {
   Server,
   UserRound,
   Wrench,
+  X,
 } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import { portfolioData } from "./data";
@@ -52,8 +55,51 @@ function IconForSkill({ title }: { title: string }) {
   return <Database size={28} />;
 }
 
+type Screenshot = {
+  src: string;
+  alt: string;
+};
+
+type LightboxState = {
+  images: Screenshot[];
+  index: number;
+};
+
 function Portfolio() {
   const { profile, quickProfile, about, career, projects, skills, education } = portfolioData;
+  const [lightbox, setLightbox] = React.useState<LightboxState | null>(null);
+  const activeImage = lightbox ? lightbox.images[lightbox.index] : null;
+
+  const openLightbox = (images: Screenshot[], index: number) => {
+    setLightbox({ images, index });
+  };
+
+  const closeLightbox = () => {
+    setLightbox(null);
+  };
+
+  const showPreviousImage = () => {
+    setLightbox((current) =>
+      current ? { ...current, index: (current.index - 1 + current.images.length) % current.images.length } : current,
+    );
+  };
+
+  const showNextImage = () => {
+    setLightbox((current) => (current ? { ...current, index: (current.index + 1) % current.images.length } : current));
+  };
+
+  React.useEffect(() => {
+    if (!lightbox) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") closeLightbox();
+      if (event.key === "ArrowLeft") showPreviousImage();
+      if (event.key === "ArrowRight") showNextImage();
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [lightbox]);
 
   return (
     <main className="app">
@@ -226,6 +272,23 @@ function Portfolio() {
                   <Pill key={item}>{item}</Pill>
                 ))}
               </div>
+              {project.screenshots && (
+                <div className="project-screenshots" aria-label={`${project.title} 화면 이미지`}>
+                  {project.screenshots.map((image, screenshotIndex) => (
+                    <figure key={image.src}>
+                      <button
+                        className="screenshot-button"
+                        type="button"
+                        onClick={() => openLightbox(project.screenshots ?? [], screenshotIndex)}
+                        aria-label={`${image.alt} 확대`}
+                      >
+                        <img src={image.src} alt={image.alt} loading="lazy" />
+                      </button>
+                      <figcaption>{image.alt.replace(`${project.title} `, "")}</figcaption>
+                    </figure>
+                  ))}
+                </div>
+              )}
               <div className="three-grid project-detail">
                 <div>
                   <h4>주요 기능</h4>
@@ -324,6 +387,29 @@ function Portfolio() {
           </div>
         </div>
       </footer>
+
+      {activeImage && lightbox && (
+        <div className="lightbox" role="dialog" aria-modal="true" aria-label={activeImage.alt}>
+          <button className="lightbox-backdrop" type="button" onClick={closeLightbox} aria-label="이미지 닫기" />
+          <div className="lightbox-content">
+            <button className="lightbox-close" type="button" onClick={closeLightbox} aria-label="이미지 닫기">
+              <X size={22} />
+            </button>
+            {lightbox.images.length > 1 && (
+              <button className="lightbox-nav lightbox-nav-prev" type="button" onClick={showPreviousImage} aria-label="이전 이미지">
+                <ChevronLeft size={26} />
+              </button>
+            )}
+            <img src={activeImage.src} alt={activeImage.alt} />
+            {lightbox.images.length > 1 && (
+              <button className="lightbox-nav lightbox-nav-next" type="button" onClick={showNextImage} aria-label="다음 이미지">
+                <ChevronRight size={26} />
+              </button>
+            )}
+            <p>{activeImage.alt}</p>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
