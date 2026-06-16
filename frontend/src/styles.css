@@ -464,7 +464,7 @@ a {
 .three-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
+  gap: 14px;
   margin-top: 24px;
 }
 
@@ -472,7 +472,7 @@ a {
 .project-detail > div {
   border-radius: 8px;
   background: #f5f7fb;
-  padding: 20px;
+  padding: 18px;
 }
 
 .three-grid h4 {
@@ -481,7 +481,33 @@ a {
 }
 
 .three-grid li {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  margin-top: 7px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.three-grid li::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #59677e;
   margin-top: 8px;
+}
+
+.text-stack {
+  display: grid;
+  gap: 8px;
+}
+
+.text-stack p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.58;
 }
 
 .pill-row {

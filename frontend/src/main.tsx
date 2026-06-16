@@ -228,7 +228,11 @@ function Portfolio() {
                 </div>
                 <div>
                   <h4>배운 점</h4>
-                  <p>{item.learning}</p>
+                  <div className="text-stack">
+                    {item.learning.map((paragraph) => (
+                      <p key={paragraph}>{paragraph}</p>
+                    ))}
+                  </div>
                 </div>
               </div>
             </article>
@@ -308,7 +312,11 @@ function Portfolio() {
                 </div>
                 <div className="soft-accent">
                   <h4>문제 해결 경험</h4>
-                  <p>{project.problem}</p>
+                  <div className="text-stack">
+                    {project.problem.map((paragraph) => (
+                      <p key={paragraph}>{paragraph}</p>
+                    ))}
+                  </div>
                 </div>
               </div>
             </article>

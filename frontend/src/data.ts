@@ -18,7 +18,7 @@ export type PortfolioData = {
     description: string;
     tasks: string[];
     stack: string[];
-    learning: string;
+    learning: string[];
   }>;
   projects: Array<{
     title: string;
@@ -29,7 +29,7 @@ export type PortfolioData = {
     stack: string[];
     features: string[];
     contributions: string[];
-    problem: string;
+    problem: string[];
     github?: string;
     deploy?: string;
     screenshots?: Array<{ src: string; alt: string }>;
@@ -51,13 +51,14 @@ export const portfolioData: PortfolioData = {
     github: "https://github.com/Zwonnyy",
     portfolio: "https://stupendous-market-b2f.notion.site/940a243405714ded91d28d495d54721e",
     summary:
-      "웹 서비스 개발과 백엔드 구현을 중심으로 성장하고 있는 개발자입니다. 대학정보시스템 개발 및 사업관리 경험을 통해 실제 사용자의 요구사항을 기능으로 구현하는 과정을 경험했습니다.",
+      "끊임없이 시도하여 성장하고 있는 개발자입니다. " +
+      "대학정보시스템 개발 및 사업관리 경험을 통해 실제 사용자의 요구사항을 기능으로 구현하는 과정을 경험했습니다.",
     focus:
       "Java, Spring, JSP, SQL 기반의 웹 개발 경험을 바탕으로 안정적인 서비스 구조와 사용자 흐름을 고민합니다.",
   },
   quickProfile: [
     { label: "지원 직무", value: "Backend Developer / Web Developer" },
-    { label: "주요 기술", value: "Java, Spring, JSP, Servlet, MyBatis, SQL" },
+    { label: "주요 기술", value: "Java, Spring, JSP, Servlet, MyBatis, MySql, Python, ML" },
     { label: "실무 경험", value: "대학정보시스템 개발 및 AI 헬스케어 과정 조교" },
     { label: "강점", value: "요구사항 이해, 기능 구현, 문제 해결, 커뮤니케이션" },
   ],
@@ -87,8 +88,10 @@ export const portfolioData: PortfolioData = {
         "일정 관리 지원 및 문서 정리",
       ],
       stack: ["Java", "JSP", "Servlet", "Spring", "MyBatis", "Oracle", "Nexacro", "Git", "intellij", "Jenkins"],
-      learning:
-        "요구사항을 기능 단위로 정리하고 개발 방향으로 연결하는 경험을 쌓았으며, 개발 업무와 사업관리 업무를 함께 수행하며 커뮤니케이션의 중요성을 배웠습니다.",
+      learning: [
+        "요구사항을 기능 단위로 정리하고 개발 방향으로 연결하는 경험을 쌓았습니다.",
+        "개발 업무와 사업관리 업무를 함께 수행하며 커뮤니케이션의 중요성을 배웠습니다.",
+      ],
     },
     {
       company: "Oz Coding School",
@@ -104,8 +107,10 @@ export const portfolioData: PortfolioData = {
         "프로젝트 진행 상황 확인 및 피드백 지원",
       ],
       stack: ["Python", "FastAPI", "React", "claude AI", "Git", "AWS", "Docker"],
-      learning:
-        "기술 내용을 다른 사람에게 설명하면서 문제를 구조화하는 역량을 키웠고, 교육생의 이해도에 맞춰 구현 방향을 제시하는 커뮤니케이션 경험을 쌓았습니다.",
+      learning: [
+        "기술 내용을 다른 사람에게 설명하면서 문제를 구조화하는 역량을 키웠습니다.",
+        "교육생의 이해도에 맞춰 구현 방향을 제시하는 커뮤니케이션 경험을 쌓았습니다.",
+      ],
     },
   ],
   projects: [
@@ -131,13 +136,14 @@ export const portfolioData: PortfolioData = {
         "여행 후기와 질문을 확인할 수 있는 게시판 진입 흐름 정리",
         "관광지명, 지역, 요약 설명이 한눈에 보이도록 정보 구조 정리",
       ],
-      problem:
-        "관광 정보가 명소, 축제, 코스, 게시글로 나뉘어 있어 사용자가 첫 화면에서 원하는 목적지를 찾기 어려울 수 있었습니다. 메인에서는 핵심 섹션을 우선순위대로 배치하고, 추천 코스 화면에서는 목록과 지도를 함께 제공해 여행 동선을 바로 이해할 수 있도록 구성했습니다.",
+      problem: [
+        "관광 정보가 명소, 축제, 코스, 게시글로 나뉘어 있어 첫 화면에서 원하는 목적지를 찾기 어려울 수 있었습니다.",
+        "메인에서는 핵심 섹션을 우선순위대로 배치했습니다.",
+        "추천 코스 화면에서는 목록과 지도를 함께 제공해 여행 동선을 바로 이해할 수 있도록 구성했습니다.",
+      ],
       github: "https://github.com/Zwonnyy/busan-visit",
       screenshots: [
         { src: "/projects/busan-bisit-home-1.png", alt: "Bisit Busan 홈 화면 첫 번째" },
-        { src: "/projects/busan-bisit-home-2.png", alt: "Bisit Busan 홈 화면 두 번째" },
-        { src: "/projects/busan-bisit-home-3.png", alt: "Bisit Busan 홈 화면 세 번째" },
         { src: "/projects/busan-bisit-attractions-festivals.png", alt: "Bisit Busan 명소 축제 화면" },
         { src: "/projects/busan-bisit-course-recommendation.png", alt: "Bisit Busan 코스 추천 화면" },
         { src: "/projects/busan-bisit-board.png", alt: "Bisit Busan 게시판 화면" },
@@ -165,16 +171,16 @@ export const portfolioData: PortfolioData = {
         "팀 상세, 팀 생성, 내 팀 보기로 이어지는 사용자 동선 정리",
         "로그인과 회원가입 화면을 서비스 스타일에 맞춰 구성",
       ],
-      problem:
-        "풋살 매칭 서비스는 팀, 선수, 게임, 커뮤니티 정보가 분산되기 쉬워 사용자가 어디서 시작해야 할지 모호할 수 있었습니다. 메인에서 선수와 팀 랭킹을 먼저 보여주고, 팀 검색 화면에서는 가입에 필요한 핵심 정보만 표로 정리해 탐색과 액션을 빠르게 이어가도록 했습니다.",
+      problem: [
+        "팀, 선수, 게임, 커뮤니티 정보가 분산되면 사용자가 어디서 시작해야 할지 모호할 수 있었습니다.",
+        "메인에서 선수와 팀 랭킹을 먼저 보여주도록 구성했습니다.",
+        "팀 검색 화면에서는 가입에 필요한 핵심 정보만 표로 정리해 탐색과 액션을 빠르게 이어가도록 했습니다.",
+      ],
       github: "https://github.com/Zwonnyy/footmap",
       screenshots: [
         { src: "/projects/footmap-home.png", alt: "FootMap 홈 화면" },
         { src: "/projects/footmap-team-search.png", alt: "FootMap 팀 검색 화면" },
         { src: "/projects/footmap-game-matching.png", alt: "FootMap 게임 매칭 화면" },
-        { src: "/projects/footmap-board.png", alt: "FootMap 게시판 화면" },
-        { src: "/projects/footmap-about.png", alt: "FootMap 사이트 소개 화면" },
-        { src: "/projects/footmap-stadiums.png", alt: "FootMap 풋살장 정보 화면" },
         { src: "/projects/footmap-stadium-detail.png", alt: "FootMap 풋살장 상세정보 화면" },
       ],
     },
@@ -200,16 +206,18 @@ export const portfolioData: PortfolioData = {
         "Gemini API와 Qdrant를 활용한 RAG 기반 건강 분석 흐름 구성",
         "JWT 인증과 의사/환자 역할 기반 권한 흐름 정리",
       ],
-      problem:
-        "진료 후 환자가 복약법과 생활관리 지침을 꾸준히 실천하지 못하고, 의사는 환자 상태 변화를 여러 화면에서 확인해야 하는 문제가 있었습니다. 진료기록, 복약, 바이탈, 건강일지, 문진 데이터를 하나의 흐름으로 연결하고 AI 분석 결과를 환자 가이드와 의사용 위험도 큐로 나눠 제공하도록 구성했습니다.",
+      problem: [
+        "진료 후 환자가 복약법과 생활관리 지침을 꾸준히 실천하지 못하는 문제가 있었습니다.",
+        "의사는 환자 상태 변화를 여러 화면에서 확인해야 하는 불편함이 있었습니다.",
+        "진료기록, 복약, 바이탈, 건강일지, 문진 데이터를 하나의 흐름으로 연결했습니다.",
+        "AI 분석 결과를 환자 가이드와 의사용 위험도 큐로 나눠 제공하도록 구성했습니다.",
+      ],
       github: "https://github.com/Zwonnyy/HealthCare_1.git",
       screenshots: [
         { src: "/projects/mediguide-dashboard.png", alt: "MediGuide AI 대시보드" },
         { src: "/projects/mediguide-medical-record.png", alt: "MediGuide AI 진료 기록 화면" },
-        { src: "/projects/mediguide-health-report-menu.png", alt: "MediGuide AI 건강 리포트 메뉴" },
         { src: "/projects/mediguide-health-report.png", alt: "MediGuide AI 건강 리포트" },
         { src: "/projects/mediguide-messages.png", alt: "MediGuide AI 메시지 화면" },
-        { src: "/projects/mediguide-reservation.png", alt: "MediGuide AI 예약 화면" },
       ],
     },
     {
@@ -234,20 +242,18 @@ export const portfolioData: PortfolioData = {
         "챌린지 리마인더와 알림 흐름을 통해 반복 실천을 지원",
         "보호자 공유 기능으로 사용자 관리 현황을 함께 확인하는 구조 설계",
       ],
-      problem:
-        "만성질환 관리는 한 번의 진료보다 매일 반복되는 생활습관 관리가 중요하지만, 사용자가 기록과 실천을 지속하기 어렵다는 문제가 있었습니다. 질환별 챌린지와 오늘의 루틴, 리마인더, 목표 관리를 연결해 사용자가 다음 행동을 바로 선택할 수 있도록 설계했습니다.",
+      problem: [
+        "만성질환 관리는 한 번의 진료보다 매일 반복되는 생활습관 관리가 중요하다고 판단했습니다.",
+        "하지만 사용자가 기록과 실천을 지속하기 어렵다는 문제가 있었습니다.",
+        "질환별 챌린지와 오늘의 루틴, 리마인더, 목표 관리를 연결했습니다.",
+        "사용자가 다음 행동을 바로 선택할 수 있도록 화면 흐름을 설계했습니다.",
+      ],
       github: "https://github.com/Zwonnyy/HealthCare_2.git",
       screenshots: [
         { src: "/projects/lifecare-home.png", alt: "LifeCare Challenge 홈 화면" },
         { src: "/projects/lifecare-dashboard.png", alt: "LifeCare Challenge 대시보드" },
         { src: "/projects/lifecare-challenge-menu.png", alt: "LifeCare Challenge 챌린지 메뉴" },
         { src: "/projects/lifecare-reservation.png", alt: "LifeCare Challenge 예약 요청 화면" },
-        { src: "/projects/lifecare-medical-record.png", alt: "LifeCare Challenge 진료 기록 화면" },
-        { src: "/projects/lifecare-notifications.png", alt: "LifeCare Challenge 알림 화면" },
-        { src: "/projects/lifecare-mypage-1.png", alt: "LifeCare Challenge 마이페이지 첫 번째 화면" },
-        { src: "/projects/lifecare-mypage-2.png", alt: "LifeCare Challenge 마이페이지 두 번째 화면" },
-        { src: "/projects/lifecare-messages.png", alt: "LifeCare Challenge 메시지 목록 화면" },
-        { src: "/projects/lifecare-message-compose.png", alt: "LifeCare Challenge 메시지 작성 화면" },
       ],
     },
   ],
