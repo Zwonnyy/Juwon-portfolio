@@ -411,6 +411,11 @@ a {
   padding: 28px;
 }
 
+.career-list {
+  display: grid;
+  gap: 22px;
+}
+
 .card-heading,
 .project-head,
 .education-card {

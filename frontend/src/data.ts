@@ -10,7 +10,7 @@ export type PortfolioData = {
   };
   quickProfile: Array<{ label: string; value: string }>;
   about: { title: string; paragraphs: string[]; strengths: string[] };
-  career: {
+  career: Array<{
     company: string;
     role: string;
     period: string;
@@ -19,7 +19,7 @@ export type PortfolioData = {
     tasks: string[];
     stack: string[];
     learning: string;
-  };
+  }>;
   projects: Array<{
     title: string;
     type: string;
@@ -57,7 +57,7 @@ export const portfolioData: PortfolioData = {
   quickProfile: [
     { label: "지원 직무", value: "Backend Developer / Web Developer" },
     { label: "주요 기술", value: "Java, Spring, JSP, Servlet, MyBatis, SQL" },
-    { label: "실무 경험", value: "대학정보시스템 개발 및 사업관리" },
+    { label: "실무 경험", value: "대학정보시스템 개발 및 AI 헬스케어 과정 조교" },
     { label: "강점", value: "요구사항 이해, 기능 구현, 문제 해결, 커뮤니케이션" },
   ],
   about: {
@@ -72,22 +72,41 @@ export const portfolioData: PortfolioData = {
       "문제 원인 분석과 해결 중심의 태도",
     ],
   },
-  career: {
-    company: "(주)위지언",
-    role: "차세대 대학정보시스템 개발",
-    period: "2023.07 ~ 2024.12",
-    team: "개발팀 소속",
-    description:
-      "개발팀 소속으로 대학정보시스템 개발 및 사업관리 업무를 수행했습니다. 주로 프론트엔드 개발 업무를 담당했으며, 사용자 요구사항을 확인하고 기능 개선 방향을 정리하는 업무도 함께 진행했습니다.",
-    tasks: [
-      "대학정보시스템 화면 개발 및 유지보수",
-      "사용자 요구사항 확인 및 기능 개선 정리",
-      "일정 관리 지원 및 문서 정리",
-    ],
-    stack: ["Java", "JSP", "Servlet", "Spring", "MyBatis", "Oracle", "Nexacro", "Git"],
-    learning:
-      "요구사항을 기능 단위로 정리하고 개발 방향으로 연결하는 경험을 쌓았으며, 개발 업무와 사업관리 업무를 함께 수행하며 커뮤니케이션의 중요성을 배웠습니다.",
-  },
+  career: [
+    {
+      company: "(주)위지언",
+      role: "차세대 대학정보시스템 개발",
+      period: "2023.07 ~ 2024.12",
+      team: "개발팀 소속",
+      description:
+        "개발팀 소속으로 대학정보시스템 개발 및 사업관리 업무를 수행했습니다. 주로 프론트엔드 개발 업무를 담당했으며, 사용자 요구사항을 확인하고 기능 개선 방향을 정리하는 업무도 함께 진행했습니다.",
+      tasks: [
+        "대학정보시스템 개발 및 유지보수",
+        "사용자 요구사항 확인 및 기능 개선 정리",
+        "일정 관리 지원 및 문서 정리",
+      ],
+      stack: ["Java", "JSP", "Servlet", "Spring", "MyBatis", "Oracle", "Nexacro", "Git", "intellij", "Jenkins"],
+      learning:
+        "요구사항을 기능 단위로 정리하고 개발 방향으로 연결하는 경험을 쌓았으며, 개발 업무와 사업관리 업무를 함께 수행하며 커뮤니케이션의 중요성을 배웠습니다.",
+    },
+    {
+      company: "Oz Coding School",
+      role: "AI 헬스케어 과정 조교",
+      period: "2025.12 ~ 2026.06",
+      team: "교육 운영 및 실습 지원",
+      description:
+        "AI 헬스케어 과정에서 교육생의 실습과 프로젝트 진행을 지원했습니다. 백엔드, 프론트엔드, AI 활용 흐름을 함께 점검하며 학습자가 문제를 구체화하고 구현 방향을 잡을 수 있도록 도왔습니다.",
+      tasks: [
+        "교육생 실습 질의응답 및 오류 해결 지원",
+        "AI 헬스케어 프로젝트 구현 방향 정리 보조",
+        "FastAPI와 Docker, AWS를 통한 배포 기반 실습 흐름 점검",
+        "프로젝트 진행 상황 확인 및 피드백 지원",
+      ],
+      stack: ["Python", "FastAPI", "React", "claude AI", "Git", "AWS", "Docker"],
+      learning:
+        "기술 내용을 다른 사람에게 설명하면서 문제를 구조화하는 역량을 키웠고, 교육생의 이해도에 맞춰 구현 방향을 제시하는 커뮤니케이션 경험을 쌓았습니다.",
+    },
+  ],
   projects: [
     {
       title: "Bisit Busan",

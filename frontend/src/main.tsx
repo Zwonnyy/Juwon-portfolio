@@ -109,6 +109,10 @@ function Portfolio() {
                 <FaGithub />
                 GitHub
               </a>
+              <a href="tel:010-3223-1434" className="button button-outline">
+                <Phone size={18} />
+                Phone
+              </a>
             </div>
           </aside>
 
@@ -146,40 +150,44 @@ function Portfolio() {
       </section>
 
       <section id="career" className="section section-band">
-        <SectionTitle icon={BriefcaseBusiness} eyebrow="Career" title="실무 경험" description="대학정보시스템 개발 및 사업관리 업무를 통해 실제 운영 시스템의 개발 흐름을 경험했습니다." />
-        <article className="career-card">
-          <div className="card-heading">
-            <div>
-              <h3>{career.company}</h3>
-              <p>{career.role}</p>
-              <span>{career.period}</span>
-            </div>
-            <strong>{career.team}</strong>
-          </div>
-          <p className="career-description">{career.description}</p>
-          <div className="three-grid">
-            <div>
-              <h4>주요 업무</h4>
-              <ul>
-                {career.tasks.map((task) => (
-                  <li key={task}>{task}</li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h4>기술 환경</h4>
-              <div className="pill-row">
-                {career.stack.map((item) => (
-                  <Pill key={item}>{item}</Pill>
-                ))}
+        <SectionTitle icon={BriefcaseBusiness} eyebrow="Career" title="실무 경험" description="개발 실무와 교육 조교 경험을 통해 실제 서비스 구현과 학습 지원 흐름을 함께 경험했습니다." />
+        <div className="career-list">
+          {career.map((item) => (
+            <article className="career-card" key={`${item.company}-${item.role}`}>
+              <div className="card-heading">
+                <div>
+                  <h3>{item.company}</h3>
+                  <p>{item.role}</p>
+                  <span>{item.period}</span>
+                </div>
+                <strong>{item.team}</strong>
               </div>
-            </div>
-            <div>
-              <h4>배운 점</h4>
-              <p>{career.learning}</p>
-            </div>
-          </div>
-        </article>
+              <p className="career-description">{item.description}</p>
+              <div className="three-grid">
+                <div>
+                  <h4>주요 업무</h4>
+                  <ul>
+                    {item.tasks.map((task) => (
+                      <li key={task}>{task}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h4>기술 환경</h4>
+                  <div className="pill-row">
+                    {item.stack.map((stackItem) => (
+                      <Pill key={stackItem}>{stackItem}</Pill>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h4>배운 점</h4>
+                  <p>{item.learning}</p>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section id="projects" className="section">
