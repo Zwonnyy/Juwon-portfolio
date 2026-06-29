@@ -254,6 +254,23 @@ a {
   font-size: 12px;
 }
 
+.profile-note {
+  margin-top: 18px;
+  border-top: 1px solid #dfe4ee;
+  padding-top: 18px;
+}
+
+.profile-note p {
+  margin: 0;
+  color: #59677e;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.profile-note p + p {
+  margin-top: 8px;
+}
+
 .profile-links {
   display: grid;
   gap: 10px;
@@ -596,6 +613,36 @@ a {
   margin-top: 18px;
 }
 
+.project-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.project-summary-card {
+  border: 1px solid #dfe4ee;
+  border-radius: 8px;
+  background: #f8fafc;
+  padding: 16px 18px;
+}
+
+.project-summary-card strong {
+  display: block;
+  color: #1f6feb;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.project-summary-card p {
+  margin: 10px 0 0;
+  color: #46556b;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
 .project-screenshots {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -864,6 +911,10 @@ a {
 
   .project-screenshots {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project-summary-grid {
+    grid-template-columns: 1fr;
   }
 
   .project-head,

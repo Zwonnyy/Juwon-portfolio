@@ -132,19 +132,9 @@ function Portfolio() {
             </h1>
             <p className="lead">{profile.summary}</p>
             <p className="support">{profile.focus}</p>
-            <div className="profile-links">
-              <a href={`mailto:${profile.email}`}>
-                <Mail size={18} />
-                {profile.email}
-              </a>
-              <a href={profile.github} target="_blank" rel="noreferrer">
-                <FaGithub />
-                GitHub
-              </a>
-              <a href="tel:010-3223-1434">
-                <Phone size={18} />
-                010-3223-1434
-              </a>
+            <div className="profile-note">
+              <p>불명확한 요구사항을 화면, API, 서비스 흐름으로 구체화하는 과정에 강점이 있습니다.</p>
+              <p>백엔드 구조 설계와 데이터 흐름 정리, 실무형 기능 구현이 필요한 작업에서 가장 강합니다.</p>
             </div>
             <div className="actions">
               <a href={`mailto:${profile.email}`} className="button button-primary">
@@ -182,7 +172,7 @@ function Portfolio() {
             ))}
           </article>
           <article className="panel panel-accent">
-            <h3>Core Strength</h3>
+            <h3>핵심 강점</h3>
             <ul className="check-list">
               {about.strengths.map((item) => (
                 <li key={item}>
@@ -196,7 +186,12 @@ function Portfolio() {
       </section>
 
       <section id="career" className="section section-band">
-        <SectionTitle icon={BriefcaseBusiness} eyebrow="Career" title="실무 경험" description="개발 실무와 교육 조교 경험을 통해 실제 서비스 구현과 학습 지원 흐름을 함께 경험했습니다." />
+        <SectionTitle
+          icon={BriefcaseBusiness}
+          eyebrow="Career"
+          title="실무 경험"
+          description="개발, 유지보수, 사용자 요구사항 검토, 프로젝트 지원까지 실제 업무 흐름 안에서 경험했습니다."
+        />
         <div className="career-list">
           {career.map((item) => (
             <article className="career-card" key={`${item.company}-${item.role}`}>
@@ -241,7 +236,12 @@ function Portfolio() {
       </section>
 
       <section id="projects" className="section">
-        <SectionTitle icon={Code2} eyebrow="Projects" title="프로젝트" description="각 프로젝트는 구현 기능, 담당 역할, 문제 해결 경험을 기준으로 정리했습니다." />
+        <SectionTitle
+          icon={Code2}
+          eyebrow="Projects"
+          title="주요 프로젝트"
+          description="각 프로젝트를 목적, 담당 역할, 구현 내용, 문제 해결 관점에서 빠르게 파악할 수 있도록 정리했습니다."
+        />
         <div className="project-list">
           {projects.map((project, index) => (
             <article className="project-card" key={project.title}>
@@ -275,6 +275,20 @@ function Portfolio() {
                 {project.stack.map((item) => (
                   <Pill key={item}>{item}</Pill>
                 ))}
+              </div>
+              <div className="project-summary-grid">
+                <div className="project-summary-card">
+                  <strong>프로젝트 목적</strong>
+                  <p>{project.description}</p>
+                </div>
+                <div className="project-summary-card">
+                  <strong>담당 역할</strong>
+                  <p>{project.role}</p>
+                </div>
+                <div className="project-summary-card">
+                  <strong>핵심 기술</strong>
+                  <p>{project.stack.slice(0, 4).join(", ")}</p>
+                </div>
               </div>
               {project.screenshots && (
                 <div className="project-screenshots" aria-label={`${project.title} 화면 이미지`}>
@@ -325,7 +339,12 @@ function Portfolio() {
       </section>
 
       <section id="skills" className="section section-band">
-        <SectionTitle icon={Wrench} eyebrow="Skills" title="기술 스택" description="기술명 나열보다 실제 사용 경험과 연결되도록 정리했습니다." />
+        <SectionTitle
+          icon={Wrench}
+          eyebrow="Skills"
+          title="기술 스택"
+          description="단순 키워드 나열이 아니라 실제 프로젝트에서 사용한 경험 중심으로 정리했습니다."
+        />
         <div className="three-grid skill-summary">
           <article className="panel">
             <h3>Main</h3>
@@ -377,7 +396,7 @@ function Portfolio() {
 
       <footer className="footer">
         <div>
-          <p>함께 성장하며 실질적인 문제를 해결하는 개발자가 되고 싶습니다.</p>
+          <p>서비스 구조를 이해하고, 실제로 동작하는 기능을 꾸준히 구현해내는 백엔드 개발자가 되고자 합니다.</p>
           <div className="actions">
             <a href={`mailto:${profile.email}`} className="button button-light">
               <Mail size={18} />
