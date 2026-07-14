@@ -295,7 +295,7 @@ export const portfolioData: PortfolioData = {
       period: "2025.05 ~ 2025.11",
       details: [
         "K-Digital Training 과정 수료",
-        "Java / Spring 기반 백엔드 개발 학습",
+        "Python 프로그래밍 학습",
         "데이터베이스 및 SQL 활용",
         "REST API 및 서버 구조 학습",
       ],
@@ -304,7 +304,7 @@ export const portfolioData: PortfolioData = {
       name: "국비지원교육",
       course: "Java/Python을 활용한 머신러닝 SW 개발자 과정",
       period: "2022.07 ~ 2023.02",
-      details: ["Python 프로그래밍 학습", "데이터 분석 및 시각화", "머신러닝 기초 학습", "팀 프로젝트 수행"],
+      details: ["Java / Spring 기반 백엔드 개발 학습", "데이터 분석 및 시각화", "머신러닝 기초 학습", "팀 프로젝트 수행"],
     },
     {
       name: "경성대학교",
